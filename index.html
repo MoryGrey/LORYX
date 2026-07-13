@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LORYX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SPLASH -->
+    <div class="splash" id="splash">
+        <div class="brand">
+            <div class="brand-icon"><span>L</span></div>
+            <div class="brand-name"><span class="c1">LORY</span><span class="c2">X</span></div>
+            <p class="brand-sub">Доставка еды, товаров<br>и напитков на дом и в офис</p>
+        </div>
+        <canvas class="wave-canvas" id="waveCanvas"></canvas>
+    </div>
+
+    <!-- MAIN SITE -->
+    <div class="site-wrapper">
+        <div class="app" id="app">
+
+            <!-- HEADER -->
+            <div class="header">
+                <div class="header-inner">
+                    <div class="header-brand">
+                        <div class="header-logo">
+                            <div class="header-logo-icon"><span>L</span></div>
+                            <div class="header-logo-text"><span class="c1">LORY</span><span class="c2">X</span></div>
+                        </div>
+                        <div class="address">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>г. Геническ</span>
+                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button class="icon-btn">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                <path d="M13.73 21a2 2 0 01-3.46 0"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="search-wrap">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" placeholder="Поиск товаров и блюд">
+                </div>
+            </div>
+
+            <!-- CATEGORIES -->
+            <div class="categories">
+                <div class="cat-item">
+                    <div class="cat-icon pizza">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2v20M2 12h20"/>
+                            <circle cx="8" cy="9" r="1" fill="#92400e"/>
+                            <circle cx="14" cy="10" r="1" fill="#92400e"/>
+                            <circle cx="10" cy="14" r="1" fill="#92400e"/>
+                        </svg>
+                    </div>
+                    <span class="cat-name">Пицца</span>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon rolls">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.5">
+                            <ellipse cx="12" cy="12" rx="8" ry="5"/>
+                            <path d="M4 12h16"/>
+                            <circle cx="8" cy="12" r="2"/>
+                            <circle cx="16" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <span class="cat-name">Роллы</span>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon burger">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="1.5">
+                            <path d="M3 11h18v2a6 6 0 01-6 6H9a6 6 0 01-6-6v-2z"/>
+                            <path d="M3 11c0-2 2.5-4 9-4s9 2 9 4"/>
+                        </svg>
+                    </div>
+                    <span class="cat-name">Бургеры</span>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon drinks">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="1.5">
+                            <path d="M8 2h8l-1 18H9L8 2z"/>
+                            <path d="M7 6h10"/>
+                        </svg>
+                    </div>
+                    <span class="cat-name">Напитки</span>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon market">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#9d174d" stroke-width="1.5">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                            <path d="M3 6h18"/>
+                        </svg>
+                    </div>
+                    <span class="cat-name">Маркет</span>
+                </div>
+            </div>
+
+            <!-- BANNER -->
+            <div class="banner-wrap">
+                <div class="banner">
+                    <div class="banner-left">
+                        <div class="banner-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                            Акция
+                        </div>
+                        <div class="banner-title">
+                            <span>Бесплатная</span><br>доставка
+                        </div>
+                        <div class="banner-desc">на первый заказ по городу</div>
+                        <div class="banner-promo-box">
+                            <span class="banner-promo-code">LORYX-FREE</span>
+                        </div>
+                    </div>
+                    <div class="banner-image-wrap">
+                        <div class="banner-image">
+                            <img src="pizza.png" alt="Пицца">
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <!-- POPULAR -->
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Популярное</h2>
+                    <a href="#" class="section-link">Все</a>
+                </div>
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-img pizza-bg">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80" alt="Пепперони">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Пицца Пепперони</div>
+                            <div class="product-desc">30 см</div>
+                            <div class="product-bottom">
+                                <div class="product-price">450 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img rolls-bg">
+                            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&q=80" alt="Филадельфия">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Филадельфия</div>
+                            <div class="product-desc">8 шт.</div>
+                            <div class="product-bottom">
+                                <div class="product-price">590 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img burger-bg">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c2cd?w=400&q=80" alt="Чизбургер">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Чизбургер Классик</div>
+                            <div class="product-desc">250 г</div>
+                            <div class="product-bottom">
+                                <div class="product-price">320 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img drink-bg">
+                            <img src="https://images.unsplash.com/photo-1622483767028-3a664a7f2968?w=400&q=80" alt="Кола">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Кола</div>
+                            <div class="product-desc">0.5 л</div>
+                            <div class="product-bottom">
+                                <div class="product-price">99 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img burger-bg">
+                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&q=80" alt="Биг Бургер">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Биг Бургер</div>
+                            <div class="product-desc">320 г</div>
+                            <div class="product-bottom">
+                                <div class="product-price">390 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img burger-bg">
+                            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80" alt="Двойной чизбургер">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Двойной Чизбургер</div>
+                            <div class="product-desc">400 г</div>
+                            <div class="product-bottom">
+                                <div class="product-price">450 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img drink-bg">
+                            <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=400&q=80" alt="Апельсиновый сок">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Апельсиновый сок</div>
+                            <div class="product-desc">0.45 л</div>
+                            <div class="product-bottom">
+                                <div class="product-price">120 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img drink-bg">
+                            <img src="https://images.unsplash.com/photo-1600271886742-f04bfcd29995?w=400&q=80" alt="Минеральная вода">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Минеральная вода</div>
+                            <div class="product-desc">0.5 л</div>
+                            <div class="product-bottom">
+                                <div class="product-price">65 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img burger-bg">
+                            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&q=80" alt="Чикен бургер">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Чикен Бургер</div>
+                            <div class="product-desc">280 г</div>
+                            <div class="product-bottom">
+                                <div class="product-price">290 ₽</div>
+                                <button class="add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CART PAGE -->
+    <div class="page page-cart" id="pageCart" style="display:none;">
+        <div class="page-header">
+            <button class="page-back" id="btnCartBack">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+            <span class="page-title">Корзина</span>
+            <div style="width:36px"></div>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-empty" id="cartEmpty" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <p>Корзина пуста</p>
+                <span class="cart-empty-sub">Добавьте товары из каталога</span>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-summary-mini">
+                <div class="cart-summary-row">
+                    <span>Товары</span>
+                    <span id="cartSummaryItems">0 ₽</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Доставка</span>
+                    <span>Бесплатно</span>
+                </div>
+                <div class="cart-summary-total">
+                    <span>Итого</span>
+                    <span id="cartTotalPrice">0 ₽</span>
+                </div>
+            </div>
+            <button class="btn-checkout" id="btnCheckout">Перейти к оформлению</button>
+        </div>
+    </div>
+
+    <!-- CHECKOUT PAGE -->
+    <div class="page page-checkout" id="pageCheckout" style="display:none;">
+        <div class="page-header">
+            <button class="page-back" id="btnCheckoutBack">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+            <span class="page-title">Оформление заказа</span>
+            <div style="width:36px"></div>
+        </div>
+        <div class="checkout-body">
+            <div class="checkout-field">
+                <label class="checkout-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    Номер телефона
+                </label>
+                <input type="tel" class="checkout-input" id="checkoutPhone" value="+7 (999) 123-45-67" readonly>
+            </div>
+
+            <div class="checkout-field">
+                <label class="checkout-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Адрес доставки
+                </label>
+                <input type="text" class="checkout-input" id="checkoutAddress" placeholder="ул. Ленина, д. 10, кв. 5">
+            </div>
+
+            <div class="checkout-field">
+                <label class="checkout-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    Время доставки
+                </label>
+                <div class="time-options">
+                    <label class="time-option active">
+                        <input type="radio" name="deliveryTime" value="asap" checked>
+                        <span class="time-radio"></span>
+                        <span class="time-text">Как можно скорее</span>
+                    </label>
+                    <label class="time-option">
+                        <input type="radio" name="deliveryTime" value="scheduled">
+                        <span class="time-radio"></span>
+                        <span class="time-text">На определённое время</span>
+                    </label>
+                </div>
+                <div class="time-schedule" id="timeSchedule" style="display:none;">
+                    <input type="datetime-local" class="checkout-input time-picker" id="timePicker">
+                </div>
+            </div>
+
+            <div class="checkout-field">
+                <label class="checkout-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+                        <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                    </svg>
+                    Комментарий <span class="label-opt">(по желанию)</span>
+                </label>
+                <textarea class="checkout-textarea" id="checkoutComment" placeholder="Но домофона, этаж, не острая еда…"></textarea>
+            </div>
+
+            <div class="checkout-field">
+                <label class="checkout-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    Способ оплаты
+                </label>
+                <div class="payment-options">
+                    <label class="payment-option active">
+                        <input type="radio" name="payment" value="card" checked>
+                        <span class="pay-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                <line x1="1" y1="10" x2="23" y2="10"/>
+                            </svg>
+                        </span>
+                        <span class="pay-text">Картой</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cash">
+                        <span class="pay-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                            </svg>
+                        </span>
+                        <span class="pay-text">Наличными</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="checkout-summary">
+                <div class="checkout-summary-row">
+                    <span>Товары</span>
+                    <span id="checkoutSummaryItems">0 ₽</span>
+                </div>
+                <div class="checkout-summary-row">
+                    <span>Доставка</span>
+                    <span>Бесплатно</span>
+                </div>
+                <div class="checkout-summary-row checkout-summary-total">
+                    <span>Итого</span>
+                    <span id="checkoutSummaryTotal">0 ₽</span>
+                </div>
+            </div>
+
+            <button class="btn-confirm" id="btnConfirm">Подтвердить заказ</button>
+        </div>
+    </div>
+
+    <!-- CONFIRMATION PAGE -->
+    <div class="page page-confirmation" id="pageConfirmation" style="display:none;">
+        <div class="confirm-top">
+            <div class="confirm-image-wrap">
+                <img src="zakaz.png" alt="Заказ принят">
+            </div>
+            <h1 class="confirm-title">Заказ принят!</h1>
+            <p class="confirm-sub">Спасибо за ваш заказ.<br>Ожидайте доставку 🚀</p>
+        </div>
+        <div class="confirm-bottom">
+            <div class="confirm-stars-wrap">
+                <span class="confirm-stars-label">Оцените заказ</span>
+                <div class="confirm-stars" id="confirmStars">
+                    <span class="star" data-rate="1">★</span>
+                    <span class="star" data-rate="2">★</span>
+                    <span class="star" data-rate="3">★</span>
+                    <span class="star" data-rate="4">★</span>
+                    <span class="star" data-rate="5">★</span>
+                </div>
+            </div>
+            <button class="btn-home" id="btnHome">Вернуться на главную</button>
+        </div>
+    </div>
+
+    <!-- PROFILE PAGE -->
+    <div class="page page-profile" id="pageProfile" style="display:none;">
+        <div class="page-header">
+            <button class="page-back" id="btnProfileBack">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+            <span class="page-title">Профиль</span>
+            <button class="icon-btn-sm" id="btnSettings">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="profile-body">
+            <div class="profile-header-card">
+                <div class="profile-avatar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-name">Лукьянов Виктор Викторович</div>
+                    <div class="profile-status">Основатель</div>
+                    <div class="profile-phone">+7 949 424-56-32</div>
+                </div>
+            </div>
+
+            <div class="profile-menu">
+                <div class="profile-menu-item">
+                    <div class="menu-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <span class="menu-text">Мои заказы</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </div>
+
+                <div class="profile-menu-item">
+                    <div class="menu-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                        </svg>
+                    </div>
+                    <span class="menu-text">Избранное</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </div>
+
+                <div class="profile-menu-item">
+                    <div class="menu-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <span class="menu-text">Адреса</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </div>
+
+                <div class="profile-menu-item">
+                    <div class="menu-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                            <line x1="1" y1="10" x2="23" y2="10"/>
+                        </svg>
+                    </div>
+                    <span class="menu-text">Способы оплаты</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </div>
+
+                <div class="profile-menu-item">
+                    <div class="menu-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="9" cy="9" r="2"/>
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <span class="menu-text">Промокоды и акции</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </div>
+
+                <div class="profile-menu-item">
+                    <div class="menu-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <span class="menu-text">Поддержка</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </div>
+
+                <div class="profile-menu-item profile-logout">
+                    <div class="menu-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+                            <polyline points="16 17 21 12 16 7"/>
+                            <line x1="21" y1="12" x2="9" y2="12"/>
+                        </svg>
+                    </div>
+                    <span class="menu-text">Выйти</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="bottom-nav">
+        <div class="nav-item active">
+            <div class="nav-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+            </div>
+            <span class="nav-label">Главная</span>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+            </div>
+            <span class="nav-label">Мои заказы</span>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                </svg>
+            </div>
+            <span class="nav-label">Корзина</span>
+            <div class="cart-badge">2</div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </div>
+            <span class="nav-label">Профиль</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const canvas = document.getElementById('waveCanvas');
+            const ctx = canvas.getContext('2d');
+            const splash = document.getElementById('splash');
+            const app = document.getElementById('app');
+
+            let W, H;
+            let startTime = null;
+            const DURATION = 1200;
+
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            function drawFill(t) {
+                ctx.clearRect(0, 0, W, H);
+                ctx.fillStyle = '#c4000f';
+                ctx.beginPath();
+                ctx.moveTo(0, H);
+
+                const waveHeight = 50;
+                const waveSpeed = 0.004;
+                const baseY = H - (H * t);
+
+                for (let x = 0; x <= W; x += 4) {
+                    const wave = Math.sin(x * 0.009 + startTime * waveSpeed) * waveHeight * (1 - t * 0.4);
+                    const y = baseY + wave * (1 - t * 0.3);
+                    ctx.lineTo(x, y);
+                }
+
+                ctx.lineTo(W, H);
+                ctx.closePath();
+                ctx.fill();
+
+                if (t > 0.1) {
+                    ctx.fillStyle = '#d41a2a';
+                    const topBase = baseY - 12 * t;
+                    ctx.beginPath();
+                    ctx.moveTo(0, H);
+
+                    for (let x = 0; x <= W; x += 4) {
+                        const wave = Math.sin(x * 0.012 + startTime * waveSpeed + 1) * 20 * (1 - t * 0.5);
+                        const y = topBase + wave;
+                        ctx.lineTo(x, y);
+                    }
+
+                    ctx.lineTo(W, H);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
+
+            function animate(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const rawProgress = Math.min(elapsed / DURATION, 1);
+                const eased = 1 - Math.pow(1 - rawProgress, 3);
+
+                drawFill(eased);
+
+                const brandOpacity = Math.max(0, 1 - eased * 1.6);
+                const brandY = eased * -30;
+                document.querySelector('.brand').style.opacity = brandOpacity;
+                document.querySelector('.brand').style.transform = 'translateY(' + brandY + 'px)';
+
+                if (rawProgress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    splash.classList.add('hide');
+                    app.classList.add('show');
+                    document.querySelector('.bottom-nav').style.display = 'flex';
+                    setTimeout(function () { splash.style.display = 'none'; }, 500);
+                }
+            }
+
+            setTimeout(function () {
+                startTime = null;
+                requestAnimationFrame(animate);
+            }, 500);
+        });
+
+        /* ===== CART & CHECKOUT LOGIC ===== */
+        document.addEventListener('DOMContentLoaded', function () {
+            var cart = [];
+            var appEl = document.getElementById('app');
+            var pageCart = document.getElementById('pageCart');
+            var pageCheckout = document.getElementById('pageCheckout');
+            var pageConfirmation = document.getElementById('pageConfirmation');
+            var pageProfile = document.getElementById('pageProfile');
+
+            var products = [
+                { id: 1, name: 'Пицца Пепперони', desc: '30 см', price: 450, bg: 'pizza-bg', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80' },
+                { id: 2, name: 'Филадельфия', desc: '8 шт.', price: 590, bg: 'rolls-bg', img: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&q=80' },
+                { id: 3, name: 'Чизбургер Классик', desc: '250 г', price: 320, bg: 'burger-bg', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c2cd?w=400&q=80' },
+                { id: 4, name: 'Кола', desc: '0.5 л', price: 99, bg: 'drink-bg', img: 'https://images.unsplash.com/photo-1622483767028-3a664a7f2968?w=400&q=80' },
+                { id: 5, name: 'Биг Бургер', desc: '320 г', price: 390, bg: 'burger-bg', img: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&q=80' },
+                { id: 6, name: 'Двойной Чизбургер', desc: '400 г', price: 450, bg: 'burger-bg', img: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80' },
+                { id: 7, name: 'Апельсиновый сок', desc: '0.45 л', price: 120, bg: 'drink-bg', img: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=400&q=80' },
+                { id: 8, name: 'Минеральная вода', desc: '0.5 л', price: 65, bg: 'drink-bg', img: 'https://images.unsplash.com/photo-1600271886742-f04bfcd29995?w=400&q=80' },
+                { id: 9, name: 'Чикен Бургер', desc: '280 г', price: 290, bg: 'burger-bg', img: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&q=80' }
+            ];
+
+            /* ---- Render add buttons ---- */
+            var cards = document.querySelectorAll('.product-card');
+            cards.forEach(function (card, i) {
+                var btn = card.querySelector('.add-btn');
+                btn.addEventListener('click', function () {
+                    var p = products[i];
+                    var existing = cart.find(function (c) { return c.id === p.id; });
+                    if (existing) {
+                        existing.qty++;
+                    } else {
+                        cart.push({ id: p.id, name: p.name, desc: p.desc, price: p.price, bg: p.bg, img: p.img, qty: 1 });
+                    }
+                    updateCartBadge();
+                    showToast('Добавлено в корзину');
+                });
+            });
+
+            function updateCartBadge() {
+                var total = cart.reduce(function (s, c) { return s + c.qty; }, 0);
+                var badge = document.querySelector('.cart-badge');
+                badge.textContent = total;
+                badge.style.display = total > 0 ? 'flex' : 'none';
+            }
+
+            function showToast(msg) {
+                var t = document.createElement('div');
+                t.className = 'toast';
+                t.textContent = msg;
+                document.body.appendChild(t);
+                setTimeout(function () { t.classList.add('show'); }, 50);
+                setTimeout(function () { t.classList.remove('show'); setTimeout(function () { t.remove(); }, 300); }, 1500);
+            }
+
+            /* ---- Render cart ---- */
+            function renderCart() {
+                var container = document.getElementById('cartItems');
+                var empty = document.getElementById('cartEmpty');
+                var footer = document.getElementById('cartFooter');
+                container.innerHTML = '';
+
+                if (cart.length === 0) {
+                    empty.style.display = 'flex';
+                    footer.style.display = 'none';
+                    return;
+                }
+                empty.style.display = 'none';
+                footer.style.display = 'block';
+
+                cart.forEach(function (item, idx) {
+                    var div = document.createElement('div');
+                    div.className = 'cart-item-card';
+                    div.innerHTML =
+                        '<div class="cart-item-img ' + item.bg + '">' +
+                            (item.img ? '<img src="' + item.img + '" alt="' + item.name + '">' : '') +
+                        '</div>' +
+                        '<div class="cart-item-info">' +
+                            '<div class="cart-item-name">' + item.name + '</div>' +
+                            '<div class="cart-item-desc">' + item.desc + '</div>' +
+                            '<div class="cart-item-price">' + (item.price * item.qty) + ' ₽</div>' +
+                        '</div>' +
+                        '<div class="cart-item-ctrl">' +
+                            '<button class="qty-btn minus" data-idx="' + idx + '">−</button>' +
+                            '<span class="qty-num">' + item.qty + '</span>' +
+                            '<button class="qty-btn plus" data-idx="' + idx + '">+</button>' +
+                        '</div>';
+                    container.appendChild(div);
+                });
+
+                var total = cart.reduce(function (s, c) { return s + c.price * c.qty; }, 0);
+                document.getElementById('cartTotalPrice').textContent = total + ' ₽';
+                document.getElementById('checkoutSummaryItems').textContent = total + ' ₽';
+                document.getElementById('checkoutSummaryTotal').textContent = total + ' ₽';
+
+                /* Qty buttons */
+                container.querySelectorAll('.qty-btn.minus').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        var i = parseInt(btn.getAttribute('data-idx'));
+                        cart[i].qty--;
+                        if (cart[i].qty <= 0) cart.splice(i, 1);
+                        renderCart();
+                    });
+                });
+                container.querySelectorAll('.qty-btn.plus').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        var i = parseInt(btn.getAttribute('data-idx'));
+                        cart[i].qty++;
+                        renderCart();
+                    });
+                });
+            }
+
+            /* ---- Navigate ---- */
+            function showPage(page) {
+                appEl.style.display = 'none';
+                pageCart.style.display = 'none';
+                pageCheckout.style.display = 'none';
+                pageConfirmation.style.display = 'none';
+                pageProfile.style.display = 'none';
+                if (page) {
+                    if (page === pageConfirmation) page.style.display = 'flex';
+                    else page.style.display = 'block';
+                }
+                var showNav = (page === appEl || page === pageCart || page === pageProfile);
+                document.querySelector('.bottom-nav').style.display = showNav ? 'flex' : 'none';
+            }
+
+            /* Cart nav */
+            document.querySelector('.nav-item:nth-child(3)').addEventListener('click', function () {
+                renderCart();
+                showPage(pageCart);
+                setActiveNav(2);
+            });
+
+            /* Profile nav */
+            document.querySelector('.nav-item:nth-child(4)').addEventListener('click', function () {
+                showPage(pageProfile);
+                setActiveNav(3);
+            });
+
+            /* Home nav */
+            document.querySelector('.nav-item:nth-child(1)').addEventListener('click', function () {
+                showPage(appEl);
+                setActiveNav(0);
+            });
+
+            /* Orders nav */
+            document.querySelector('.nav-item:nth-child(2)').addEventListener('click', function () {
+                showPage(pageProfile);
+                setActiveNav(1);
+            });
+
+            /* Checkout */
+            document.getElementById('btnCheckout').addEventListener('click', function () {
+                if (cart.length === 0) return;
+                showPage(pageCheckout);
+                setActiveNav(-1);
+            });
+
+            /* Back buttons */
+            document.getElementById('btnCartBack').addEventListener('click', function () { showPage(appEl); setActiveNav(0); });
+            document.getElementById('btnCheckoutBack').addEventListener('click', function () { showPage(pageCart); setActiveNav(2); });
+            document.getElementById('btnProfileBack').addEventListener('click', function () { showPage(appEl); setActiveNav(0); });
+
+            /* Delivery time toggle */
+            document.querySelectorAll('input[name="deliveryTime"]').forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    document.getElementById('timeSchedule').style.display = this.value === 'scheduled' ? 'block' : 'none';
+                    document.querySelectorAll('.time-option').forEach(function (o) { o.classList.remove('active'); });
+                    this.closest('.time-option').classList.add('active');
+                });
+            });
+
+            /* Payment toggle */
+            document.querySelectorAll('input[name="payment"]').forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    document.querySelectorAll('.payment-option').forEach(function (o) { o.classList.remove('active'); });
+                    this.closest('.payment-option').classList.add('active');
+                });
+            });
+
+            /* Confirm order */
+            document.getElementById('btnConfirm').addEventListener('click', function () {
+                var addr = document.getElementById('checkoutAddress').value.trim();
+                if (!addr) {
+                    document.getElementById('checkoutAddress').style.borderColor = 'var(--primary)';
+                    document.getElementById('checkoutAddress').focus();
+                    return;
+                }
+                /* Reset stars */
+                document.querySelectorAll('#confirmStars .star').forEach(function (s) { s.classList.remove('selected'); });
+                showPage(pageConfirmation);
+            });
+
+            /* Stars rating */
+            document.querySelectorAll('#confirmStars .star').forEach(function (star) {
+                star.addEventListener('click', function () {
+                    var rate = parseInt(this.getAttribute('data-rate'));
+                    document.querySelectorAll('#confirmStars .star').forEach(function (s, i) {
+                        s.classList.toggle('selected', i < rate);
+                    });
+                });
+            });
+
+            /* Home */
+            document.getElementById('btnHome').addEventListener('click', function () {
+                cart = [];
+                updateCartBadge();
+                renderCart();
+                showPage(appEl);
+                setActiveNav(0);
+            });
+
+            /* Active nav helper */
+            function setActiveNav(idx) {
+                document.querySelectorAll('.nav-item').forEach(function (n) { n.classList.remove('active'); });
+                if (idx >= 0) document.querySelectorAll('.nav-item')[idx].classList.add('active');
+            }
+
+            /* Init badge */
+            updateCartBadge();
+        });
+    </script>
+
+</body>
+</html>
